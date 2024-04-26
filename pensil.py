@@ -33,11 +33,6 @@ class Enemy(GameSprite):
             self.rect.y = 0
             self.rect.x = randint(50,win_width - 50)
             lost = lost + 1
-    mixer.init()
-    mixer.music.load('alahah.ogg')
-    mixer.music.play()
-    kick = mixer.Sound('alahah.ogg')
-    kick.play()
 
 class Player(GameSprite):
     def update(self):
@@ -55,6 +50,10 @@ class Player(GameSprite):
     def fire(self):
         bullet = Bullet('bullet.png', self.rect.centerx-50, self.rect.top, 15)
         bullets.add(bullet)
+
+        mixer.init()
+        mixer.music.load('alahah.ogg')
+        mixer.music.play()
 
 
 
